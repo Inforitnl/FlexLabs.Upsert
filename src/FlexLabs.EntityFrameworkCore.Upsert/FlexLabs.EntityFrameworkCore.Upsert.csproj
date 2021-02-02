@@ -20,6 +20,8 @@ Also supports injecting sql command generators to add support for other provider
     <PackageTags>Entity Framework Core entity-framework-core EF EntityFramework EntityFrameworkCore EFCore Upsert</PackageTags>
     <VersionPrefix>3.1.0</VersionPrefix>
     <PackageReleaseNotes>
+v3.2.0
++ Added basic support for OwnedEntities
 v3.1.0
 - Referencing EF Core 3.1 only, due to internal namespace changes and compatibility issues with .NET Full Framework
 + Nulable type metadata
@@ -37,7 +39,8 @@ v2.2.0:
 + Support for default column values and expressions
 + Null value handling in generated SQL
 ! Patched MySQL syntax for columns that haven't been updated but may be present in expressions
-    </PackageReleaseNotes>
+</PackageReleaseNotes>
+    <Version>3.2.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
