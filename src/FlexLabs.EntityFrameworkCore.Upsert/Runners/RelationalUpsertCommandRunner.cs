@@ -182,7 +182,7 @@ namespace FlexLabs.EntityFrameworkCore.Upsert.Runners
                     .Select(p =>
                     {
                         var columnName = p.GetColumnName();
-                        object rawValue;
+                        object? rawValue;
                         if (p.DeclaringEntityType == entityType)
                         {
                             rawValue = p.PropertyInfo.GetValue(e);
@@ -190,7 +190,8 @@ namespace FlexLabs.EntityFrameworkCore.Upsert.Runners
                         else
                         {
                             var navigation = entityType.GetNavigations().Single(x => x.ForeignKey.IsOwnership && x.GetTargetType().GetProperties().Contains(p));
-                            rawValue = p.PropertyInfo.GetValue(navigation.PropertyInfo.GetValue(e));
+                            var navigationPropertyValue = navigation.PropertyInfo.GetValue(e);
+                            rawValue = navigationPropertyValue != null ? p.PropertyInfo.GetValue(navigationPropertyValue) : null;
                         }
                         string? defaultSql = null;
                         if (rawValue == null)

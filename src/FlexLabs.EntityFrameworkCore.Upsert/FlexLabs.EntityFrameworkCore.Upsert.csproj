@@ -40,7 +40,7 @@ v2.2.0:
 + Null value handling in generated SQL
 ! Patched MySQL syntax for columns that haven't been updated but may be present in expressions
 </PackageReleaseNotes>
-    <Version>3.2.0</Version>
+    <Version>3.2.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
